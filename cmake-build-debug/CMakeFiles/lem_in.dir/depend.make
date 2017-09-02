@@ -13,15 +13,27 @@ CMakeFiles/lem_in.dir/free.c.o: ../libft/ft_printf/ft_printf.h
 CMakeFiles/lem_in.dir/free.c.o: ../libft/get_next_line/get_next_line.h
 CMakeFiles/lem_in.dir/free.c.o: ../libft/libft.h
 
+CMakeFiles/lem_in.dir/help_fill_list.c.o: ../help_fill_list.c
+CMakeFiles/lem_in.dir/help_fill_list.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/help_fill_list.c.o: ../libft/ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/help_fill_list.c.o: ../libft/get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/help_fill_list.c.o: ../libft/libft.h
+
+CMakeFiles/lem_in.dir/list_create.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/list_create.c.o: ../libft/ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/list_create.c.o: ../libft/get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/list_create.c.o: ../libft/libft.h
+CMakeFiles/lem_in.dir/list_create.c.o: ../list_create.c
+
 CMakeFiles/lem_in.dir/main.c.o: ../lem_in.h
 CMakeFiles/lem_in.dir/main.c.o: ../libft/ft_printf/ft_printf.h
 CMakeFiles/lem_in.dir/main.c.o: ../libft/get_next_line/get_next_line.h
 CMakeFiles/lem_in.dir/main.c.o: ../libft/libft.h
 CMakeFiles/lem_in.dir/main.c.o: ../main.c
 
-CMakeFiles/lem_in.dir/validation.c.o: ../lem_in.h
-CMakeFiles/lem_in.dir/validation.c.o: ../libft/ft_printf/ft_printf.h
-CMakeFiles/lem_in.dir/validation.c.o: ../libft/get_next_line/get_next_line.h
-CMakeFiles/lem_in.dir/validation.c.o: ../libft/libft.h
-CMakeFiles/lem_in.dir/validation.c.o: ../validation.c
+CMakeFiles/lem_in.dir/validation_after_read.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/validation_after_read.c.o: ../libft/ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/validation_after_read.c.o: ../libft/get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/validation_after_read.c.o: ../libft/libft.h
+CMakeFiles/lem_in.dir/validation_after_read.c.o: ../validation_after_read.c
 

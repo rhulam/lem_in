@@ -46,11 +46,6 @@ int     main()
     file_array[i] = NULL;
     free(string);
     validation(file_array);
-    i = 0;
-    while (file_array[i])
-    {
-        ft_printf("%s\n", file_array[i]);
-        i++;
-    }
+    fill_adjacency_list(file_array);
     return 0;
 }

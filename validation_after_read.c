@@ -5,12 +5,16 @@ int valid_route(char *line)
     int     i;
 
     i = 0;
-    while (isdigit(line[i]))
+    if (line[i] == '#' || line[i] == 'L' || line[i] == ' ' || line[i] == '\t' || line[i] == '\r')
+        return (0);
+    while (line[i] != '-' && line[i] != '\0' && line[i] != ' ' && line[i] != '\t' && line[i] != '\r')
         i++;
     if (line[i] != '-')
         return (0);
     i++;
-    while (isdigit(line[i]))
+    if (line[i] == '#' || line[i] == 'L' || line[i] == ' ' || line[i] == '\t' || line[i] == '\r')
+        return (0);
+    while (line[i] != '-' && line[i] != '\0' && line[i] != ' ' && line[i] != '\t' && line[i] != '\r')
         i++;
     if (line[i] != '\0')
         return (0);
@@ -26,6 +30,8 @@ int valid_numeric_line(char *line)
         return (0);
     while (line[i] != ' ' && line[i] != '\0')
         i++;
+    if (line[i] == '\0')
+        return (0);
     i++;
     while (isdigit(line[i]))
         i++;
@@ -92,40 +98,3 @@ int     line_validator(char *line)
             return (0);
     return (1);
 }
-
-//
-//int start_exists(char **file_array)
-//{
-//    int     i;
-//    int     counter;
-//
-//    i = 0;
-//    counter = 0;
-//    while (file_array[i])
-//    {
-//        if (!ft_strcmp(file_array[i], "##start"))
-//            if (valid_numeric_line(file_array[i + 1]))
-//                counter++;
-//    }
-//    if (counter == 1)
-//        return (1);
-//    return (0);
-//}
-//
-//int end_exists(char **file_array)
-//{
-//    int     i;
-//    int     counter;
-//
-//    i = 0;
-//    counter = 0;
-//    while (file_array[i])
-//    {
-//        if (!ft_strcmp(file_array[i], "##end"))
-//            if (valid_numeric_line(file_array[i + 1]))
-//                counter++;
-//    }
-//    if (counter == 1)
-//        return (1);
-//    return (0);
-//}

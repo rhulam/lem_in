@@ -132,6 +132,9 @@
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/free.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhulam/lem_in/help_fill_list.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/lem_in.h">
 			<Option target="lem_in"/>
 		</Unit>
@@ -402,10 +405,13 @@
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/libft/libft.h">
 			<Option target="libft.a"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhulam/lem_in/list_create.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/main.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhulam/lem_in/validation.c">
+		<Unit filename="/nfs/2016/r/rhulam/lem_in/validation_after_read.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/CMakeLists.txt">

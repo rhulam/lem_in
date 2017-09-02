@@ -14,6 +14,10 @@ lem_in.h
 lem_in.h
 /nfs/2016/r/rhulam/lem_in/lem_in.h
 
+/nfs/2016/r/rhulam/lem_in/help_fill_list.c
+lem_in.h
+/nfs/2016/r/rhulam/lem_in/lem_in.h
+
 /nfs/2016/r/rhulam/lem_in/lem_in.h
 libft/libft.h
 /nfs/2016/r/rhulam/lem_in/libft/libft.h
@@ -62,11 +66,15 @@ ft_printf/ft_printf.h
 get_next_line/get_next_line.h
 /nfs/2016/r/rhulam/lem_in/libft/get_next_line/get_next_line.h
 
+/nfs/2016/r/rhulam/lem_in/list_create.c
+lem_in.h
+/nfs/2016/r/rhulam/lem_in/lem_in.h
+
 /nfs/2016/r/rhulam/lem_in/main.c
 lem_in.h
 /nfs/2016/r/rhulam/lem_in/lem_in.h
 
-/nfs/2016/r/rhulam/lem_in/validation.c
+/nfs/2016/r/rhulam/lem_in/validation_after_read.c
 lem_in.h
 /nfs/2016/r/rhulam/lem_in/lem_in.h
 
