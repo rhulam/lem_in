@@ -90,12 +90,13 @@ int     fill_routes_array(int **routes_matrix, char **file_array, s_lem_in *firs
         {
             if (!(id = find_id(first_list, file_array[i])))
                 return 0;
-            //ft_printf("%d %d\n", id[0], id[1]);
             routes_matrix[id[0]][id[1]] = 1;
             routes_matrix[id[1]][id[0]] = 1;
         }
         i++;
     }
+    if (double_vertexes(first_list))
+        return (0);
     return (1);
 }
 
@@ -156,16 +157,11 @@ void    fill_adjacency_list(char **file_array)
         free_list(first_list);
         error();
     }
-    i = 0;
-    while (routes_matrix[i])
+    if (!create_routes(first_list, routes_matrix))
     {
-        j = 0;
-        while (routes_matrix[i][j] != -1)
-        {
-            ft_printf("%d ", routes_matrix[i][j]);
-            j++;
-        }
-        ft_printf("\n");
-        i++;
+        free_array(file_array);
+        free_int_array(routes_matrix);
+        free_list(first_list);
+        error();
     }
 }

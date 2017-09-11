@@ -2593,6 +2593,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/main.c.s
 .PHONY : main.c.s
 
+routers.o: routers.c.o
+
+.PHONY : routers.o
+
+# target to build an object file
+routers.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/routers.c.o
+.PHONY : routers.c.o
+
+routers.i: routers.c.i
+
+.PHONY : routers.i
+
+# target to preprocess a source file
+routers.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/routers.c.i
+.PHONY : routers.c.i
+
+routers.s: routers.c.s
+
+.PHONY : routers.s
+
+# target to generate assembly for a file
+routers.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/routers.c.s
+.PHONY : routers.c.s
+
 validation_after_read.o: validation_after_read.c.o
 
 .PHONY : validation_after_read.o
@@ -2903,6 +2930,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... routers.o"
+	@echo "... routers.i"
+	@echo "... routers.s"
 	@echo "... validation_after_read.o"
 	@echo "... validation_after_read.i"
 	@echo "... validation_after_read.s"

@@ -33,3 +33,23 @@ int     is_end(char *line)
         return 1;
     return (0);
 }
+
+int     double_vertexes(s_lem_in *first_list)
+{
+    s_lem_in    *list;
+    s_lem_in    *tmp;
+
+    list = first_list;
+    while (list)
+    {
+        tmp = list->next;
+        while (tmp)
+        {
+            if (!strcmp(list->name, tmp->name) || (list->x == tmp->x && list->y == tmp->y))
+                return (1);
+            tmp = tmp->next;
+        }
+        list = list->next;
+    }
+    return (0);
+}

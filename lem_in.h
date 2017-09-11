@@ -28,5 +28,7 @@ int     is_start(char *line);
 int     valid_route(char *line);
 void    free_list(s_lem_in *list);
 void    free_int_array(int **array);
+int     double_vertexes(s_lem_in *first_list);
+int     create_routes(s_lem_in *first_list, char **routes_matrix);
 
 #endif
