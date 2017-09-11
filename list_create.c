@@ -7,6 +7,8 @@ void    fill_vertex_list(s_lem_in *list, char **file_array)
     i = 0;
     while (file_array[i])
     {
+        list->start = 0;
+        list->end = 0;
         if (valid_numeric_line(file_array[i]))
             create_new_vertex(list, file_array[i]);
         if (is_start(file_array[i]))
@@ -157,7 +159,7 @@ void    fill_adjacency_list(char **file_array)
         free_list(first_list);
         error();
     }
-    if (!create_routes(first_list, routes_matrix))
+    if (!create_routes(first_list, routes_matrix, count_ants(file_array[0]), n))
     {
         free_array(file_array);
         free_int_array(routes_matrix);

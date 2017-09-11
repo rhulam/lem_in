@@ -53,3 +53,15 @@ int     double_vertexes(s_lem_in *first_list)
     }
     return (0);
 }
+
+int     count_ants(char *line)
+{
+    int     ants;
+    char    *temp;
+
+    ants = ft_atoi(line);
+    temp = ft_itoa(ants);
+    if (!ft_strcmp(temp, line))
+        return NULL;
+    return ants;
+}
