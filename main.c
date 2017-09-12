@@ -29,12 +29,11 @@ void    validation(char **file_array)
     }
 }
 
-int     main()
+int     main(void)
 {
     char    **file_array;
     char    *string;
     int     i;
-
     i = 0;
     file_array = malloc(sizeof(char *) * 4096);
     file_array[0] = NULL;

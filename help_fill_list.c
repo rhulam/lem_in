@@ -1,23 +1,26 @@
 #include "lem_in.h"
 
-void    create_new_vertex(s_lem_in *list, char *line)
+int     vertex_repeats(s_lem_in *first)
 {
-    int         i;
-    s_lem_in    *next;
+    s_lem_in    *list;
+    s_lem_in    *temp;
 
-    i = 0;
-    while (line[i] != ' ')
-        i++;
-    ft_strncpy(list->name = ft_strnew(i), line, i);
-    list->x = ft_atoi(line + ++i);
-    while (line[i] != ' ')
-        i++;
-    list->y = ft_atoi(line + ++i);
-    next = malloc(sizeof(s_lem_in));
-    next->next = NULL;
-    next->id = list->id + 1;
-    next->name = NULL;
-    list->next = next;
+    list = first;
+    while (list)
+    {
+        temp = list->next;
+        while (temp)
+        {
+            if (!ft_strcmp(temp->name, list->name) || (temp->x == list->x && temp->y == list->y))
+            {
+                free_list(first);
+                return (1);
+            }
+            temp = temp->next;
+        }
+        list = list->next;
+    }
+    return (0);
 }
 
 int     is_start(char *line)
@@ -34,34 +37,47 @@ int     is_end(char *line)
     return (0);
 }
 
-int     double_vertexes(s_lem_in *first_list)
+s_lem_in    *create_vertex(char *line, int id)
 {
+    int         i;
     s_lem_in    *list;
-    s_lem_in    *tmp;
+    int         l;
 
-    list = first_list;
-    while (list)
+    i = 0;
+    while (line[i] != ' ')
+        i++;
+    list = malloc(sizeof(s_lem_in));
+    list->name = ft_strnew(i + 1);
+    ft_strncpy(list->name, line, i);
+    list->id = id;
+    i++;
+    l = 0;
+    while (line[i + l] != ' ')
+        l++;
+    if (ft_strncmp(ft_itoa(ft_atoi(line + i)), line + i, l))
     {
-        tmp = list->next;
-        while (tmp)
-        {
-            if (!strcmp(list->name, tmp->name) || (list->x == tmp->x && list->y == tmp->y))
-                return (1);
-            tmp = tmp->next;
-        }
-        list = list->next;
-    }
-    return (0);
-}
-
-int     count_ants(char *line)
-{
-    int     ants;
-    char    *temp;
-
-    ants = ft_atoi(line);
-    temp = ft_itoa(ants);
-    if (!ft_strcmp(temp, line))
+        free(list->name);
+        free(list);
         return NULL;
-    return ants;
+    }
+    list->x = ft_atoi(line + i);
+    while (line[i] != ' ')
+        i++;
+    i++;
+    l = 0;
+    while (line[i + l] != '\0')
+        l++;
+    if (ft_strncmp(ft_itoa(ft_atoi(line + i)), line + i, l))
+    {
+        free(list->name);
+        free(list);
+        return NULL;
+    }
+    list->y = ft_atoi(line + i);
+    list->start = 0;
+    list->end = 0;
+    list->length;
+    list->next = NULL;
+    list->route = NULL;
+    return list;
 }

@@ -82,7 +82,7 @@ int ant_checker(char *first_line)
     i = 0;
     while(isdigit(first_line[i]))
         i++;
-    if (first_line[i] == '\0')
+    if (first_line[i] == '\0' && !ft_strcmp(ft_itoa(ft_atoi(first_line)), first_line) && ft_atoi(first_line) > 0)
         return (1);
     return (0);
 }

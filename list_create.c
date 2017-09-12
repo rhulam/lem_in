@@ -1,169 +1,147 @@
 #include "lem_in.h"
 
-void    fill_vertex_list(s_lem_in *list, char **file_array)
+s_lem_in    *ft_copy(s_lem_in *list)
 {
-    int     i;
+    s_lem_in    *copy;
 
-    i = 0;
-    while (file_array[i])
-    {
-        list->start = 0;
-        list->end = 0;
-        if (valid_numeric_line(file_array[i]))
-            create_new_vertex(list, file_array[i]);
-        if (is_start(file_array[i]))
-        {
-            list->start = 1;
-            create_new_vertex(list, file_array[++i]);
-        }
-        if (is_end(file_array[i]))
-        {
-            list->end = 1;
-            create_new_vertex(list, file_array[++i]);
-        }
-        if (list->next)
-            list = list->next;
-        i++;
-    }
+    copy = malloc(sizeof(s_lem_in));
+    copy->name = ft_strdup(list->name);
+    copy->id = list->id;
+    copy->x = list->x;
+    copy->y = list->y;
+    copy->start = list->start;
+    copy->end = list->end;
+    copy->length = list->length;
+    copy->next = list;
+    copy->route = NULL;
+    return copy;
 }
 
-int     *find_id(s_lem_in *first_list, char *line)
+int         add_route(s_lem_in *list, char *s1, char *s2)
 {
-    s_lem_in    *list;
-    int         *id;
-    int         i;
-    char        *name;
+    s_lem_in    *temp;
+    s_lem_in    *first;
+    s_lem_in    *second;
 
-    i = 0;
-    id = malloc(sizeof(int) * 2);
-    list = first_list;
-    while (line[i] != '-')
-        i++;
-    name = ft_strnew(i);
-    ft_strncpy(name, line, i);
-    while (list)
+    temp = list;
+    first = NULL;
+    second = NULL;
+    while (temp)
     {
-        if (list->name)
-            if (!ft_strcmp(list->name, name))
-            {
-                id[0] = list->id;
-                break;
-            }
-        list = list->next;
-        if (!list)
-        {
-            free(name);
-            return NULL;
-        }
+        if (!ft_strcmp(temp->name, s1))
+            first = temp;
+        if (!ft_strcmp(temp->name, s2))
+            second = temp;
+        temp = temp->next;
     }
-    i++;
-    free(name);
-    name = ft_strnew(ft_strlen(line) - i);
-    ft_strncpy(name, line + i, ft_strlen(line) - i);
-    list = first_list;
-    while (list)
-    {
-        if (list->name)
-            if (!ft_strcmp(list->name, name))
-            {
-                id[1] = list->id;
-                break;
-            }
-        list = list->next;
-        if (!list)
-        {
-            free(name);
-            return NULL;
-        }
-    }
-    free(name);
-    return (id);
+    free(s1);
+    free(s2);
+    if (!first || !second)
+        return (0);
+    temp = first;
+    while (first->route)
+        first = first->route;
+    first->route = ft_copy(second);
+    while (second->route)
+        second = second->route;
+    second->route = ft_copy(temp);
+    return (1);
 }
 
-int     fill_routes_array(int **routes_matrix, char **file_array, s_lem_in *first_list)
+int         fill_routes(char **file_array, s_lem_in *first)
 {
     int         i;
-    int         *id;
+    int         j;
+    int         k;
+    char        *temp1;
+    char        *temp2;
 
     i = 0;
     while (file_array[i])
     {
         if (valid_route(file_array[i]))
         {
-            if (!(id = find_id(first_list, file_array[i])))
-                return 0;
-            routes_matrix[id[0]][id[1]] = 1;
-            routes_matrix[id[1]][id[0]] = 1;
+            j = 0;
+            k = 0;
+            while (file_array[i][j] != '-')
+                j++;
+            temp1 = ft_strnew(j + 1);
+            ft_strncpy(temp1, file_array[i], j);
+            j++;
+            while (file_array[i][j + k] != '\0')
+                k++;
+            temp2 = ft_strnew(k + 1);
+            ft_strncpy(temp2, file_array[i] + j, k);
+            if (!add_route(first, temp1, temp2))
+                return (0);
         }
         i++;
     }
-    if (double_vertexes(first_list))
-        return (0);
     return (1);
 }
 
-int     count_vertexes(s_lem_in *first_list)
+s_lem_in    *fill_vertex_list(char **file_array)
 {
+    int         i;
     s_lem_in    *list;
+    s_lem_in    *first;
+    int         id;
 
-    list = first_list;
-    while (list)
+    i = 0;
+    first = NULL;
+    id = 1;
+    while (file_array[i])
     {
-        if (!((list->next)->next))
+        if (valid_numeric_line(file_array[i]))
         {
-            free(list->next);
-            list->next = NULL;
-            break;
+            if (!first)
+            {
+                first = create_vertex(file_array[i], id);
+                list = first;
+            }
+            else
+            {
+                list->next = create_vertex(file_array[i], id);
+                list = list->next;
+            }
+            if (!list)
+            {
+                free_list(first);
+                return NULL;
+            }
+            id++;
+            if (is_start(file_array[i - 1]))
+                list->start = 1;
+            if (is_end(file_array[i - 1]))
+                list->end = 1;
         }
-        list = list->next;
+        i++;
     }
-    return (list->id);
+    return first;
 }
 
 void    fill_adjacency_list(char **file_array)
 {
     s_lem_in    *list;
-    s_lem_in    *first_list;
-    int         **routes_matrix;
-    int         i;
-    int         n;
-    int         j;
+    s_lem_in    *temp;
 
-    i = 0;
-    j = 0;
-    list = malloc(sizeof(s_lem_in));
-    list->next = NULL;
-    list->id = 0;
-    list->name = NULL;
-    first_list = list;
-    fill_vertex_list(list, file_array);
-    n = count_vertexes(first_list) + 1;
-    routes_matrix = malloc(sizeof(int*) * (n + 1));
-    while (i < n)
-    {
-        routes_matrix[i] = malloc(sizeof(int) * (n + 1));
-        while (j < n)
-        {
-            routes_matrix[i][j] = 0;
-            j++;
-        }
-        j = 0;
-        routes_matrix[i][n] = -1;
-        i++;
-    }
-    routes_matrix[i] = NULL;
-    if (!fill_routes_array(routes_matrix, file_array, first_list))
-    {
-        free_array(file_array);
-        free_int_array(routes_matrix);
-        free_list(first_list);
+    list = fill_vertex_list(file_array);
+    if (!list)
         error();
-    }
-    if (!create_routes(first_list, routes_matrix, count_ants(file_array[0]), n))
-    {
-        free_array(file_array);
-        free_int_array(routes_matrix);
-        free_list(first_list);
+    if (vertex_repeats(list))
         error();
-    }
+    if (!fill_routes(file_array, list))
+        error();
+//    while (list)
+//    {
+//        temp = list;
+//        while (temp)
+//        {
+//            ft_printf("Name: %s", temp->name);
+//            temp = temp->route;
+//            ft_printf("\n");
+//        }
+//        ft_printf("\n");
+//        list = list->next;
+//    }
 }

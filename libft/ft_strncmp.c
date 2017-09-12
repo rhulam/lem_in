@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
+#include <unistd.h>
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -24,7 +25,12 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (temp1[i] != '\0' && temp2[i] != '\0' && i < n)
 	{
 		if (temp1[i] == temp2[i])
-			i++;
+		{
+			if (i + 1 < n)
+				i++;
+			else
+				break ;
+		}
 		else
 			break ;
 	}
