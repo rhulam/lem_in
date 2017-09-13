@@ -31,5 +31,8 @@ int         valid_route(char *line);
 void        free_list(s_lem_in *list);
 s_lem_in    *create_vertex(char *line, int id);
 int         vertex_repeats(s_lem_in *first);
+s_lem_in    *start_to_first(s_lem_in *list);
+void        create_routes(s_lem_in *list, int ants);
+s_lem_in    *ft_copy(s_lem_in *list);
 
 #endif

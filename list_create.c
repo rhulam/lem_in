@@ -132,16 +132,28 @@ void    fill_adjacency_list(char **file_array)
         error();
     if (!fill_routes(file_array, list))
         error();
+    list = start_to_first(list);
+    create_routes(list, ft_atoi(file_array[0]));
 //    while (list)
 //    {
 //        temp = list;
 //        while (temp)
 //        {
-//            ft_printf("Name: %s", temp->name);
+//            ft_printf("id: %d", temp->id);
+//            if (temp->start)
+//                ft_printf(" start");
+//            if (temp->end)
+//                ft_printf(" end");
 //            temp = temp->route;
 //            ft_printf("\n");
 //        }
 //        ft_printf("\n");
 //        list = list->next;
+//    }
+//    while (list)
+//    {
+//        sleep(1);
+//        ft_printf("%s\n", list->name);
+//        list = list->route->next;
 //    }
 }

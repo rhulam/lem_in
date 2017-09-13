@@ -1,5 +1,21 @@
 #include "lem_in.h"
 
+s_lem_in    *start_to_first(s_lem_in *list)
+{
+    s_lem_in    *temp1;
+    s_lem_in    *temp2;
+
+    if (list->id == 1)
+        return list;
+    temp1 = list;
+    while (!temp1->next->start)
+        temp1 = temp1->next;
+    temp2 = temp1->next;
+    temp1->next = temp1->next->next;
+    temp2->next = list;
+    return temp2;
+}
+
 int     vertex_repeats(s_lem_in *first)
 {
     s_lem_in    *list;
