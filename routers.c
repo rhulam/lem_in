@@ -78,10 +78,12 @@ void        add_new_route(s_lem_in *routes, s_lem_in *route)
 //    temp = route;
 //    while (temp)
 //    {
-//        ft_printf("%d\n", temp->id);
+//        ft_printf("%d ", temp->id);
 //        temp = temp->next;
 //    }
 //    ft_printf("\n");
+    allways++;
+//    ft_printf("%d\n", allways);
 }
 
 void    free_last_list(s_lem_in *list)
@@ -93,9 +95,20 @@ void    free_last_list(s_lem_in *list)
         temp = temp->next;
     free(temp->next);
     temp->next = NULL;
-    allways++;
-    ft_printf("%d\n", allways);
+}
 
+void    print_route(s_lem_in *route)
+{
+    s_lem_in    *temp;
+
+    ft_printf("Current Route: ");
+    temp = route;
+    while (temp)
+    {
+        ft_printf("%d ", temp->id);
+        temp = temp->next;
+    }
+    ft_printf("\n");
 }
 
 void    routes_exists(s_lem_in *list, s_lem_in *routes, int end, s_lem_in *route)
@@ -104,8 +117,7 @@ void    routes_exists(s_lem_in *list, s_lem_in *routes, int end, s_lem_in *route
     //ft_printf("\n");
     //ft_printf("Enter: %d\n", list->id);
     route = push_to_last(route, ft_copy(list));
-    //ft_printf("After Push\n");
-    //ft_printf("%s\n%d %d\n", route->name, route->x, route->y);
+    //print_route(route);
     if (list->id == end)
     {
         //ft_printf("Find!\n");

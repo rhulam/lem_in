@@ -58,15 +58,39 @@ int start_end_count_check(char **file_array)
     {
         if (!ft_strcmp(file_array[i], "##start") && file_array[i + 1])
         {
-            if (!valid_numeric_line(file_array[i + 1]))
-                return (0);
-            start_count++;
+            i++;
+            while (file_array[i])
+            {
+                if (valid_numeric_line(file_array[i]))
+                    break ;
+                else if (file_array[i][0] == '#' && ft_strcmp(file_array[i], "##end"))
+                {
+                    i++;
+                    continue;
+                }
+                else
+                    return (0);
+            }
+            if (file_array[i])
+                start_count++;
         }
         else if (!ft_strcmp(file_array[i], "##end") && file_array[i + 1])
         {
-            if (!valid_numeric_line(file_array[i + 1]))
-                return (0);
-            end_count++;
+            i++;
+            while (file_array[i])
+            {
+                if (valid_numeric_line(file_array[i]))
+                    break ;
+                else if (file_array[i][0] == '#' && ft_strcmp(file_array[i], "##start"))
+                {
+                    i++;
+                    continue;
+                }
+                else
+                    return (0);
+            }
+            if (file_array[i])
+                end_count++;
         }
         i++;
     }
@@ -89,9 +113,7 @@ int ant_checker(char *first_line)
 
 int     line_validator(char *line)
 {
-    if (line[0] == '#' && line[1] != '#')
-        return (1);
-    else if (!ft_strcmp(line, "##start") || !ft_strcmp(line, "##end"))
+    if (line[0] == '#')
         return (1);
     else
         if (!valid_numeric_line(line) && !valid_route(line))

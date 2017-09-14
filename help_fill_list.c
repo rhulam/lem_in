@@ -5,7 +5,7 @@ s_lem_in    *start_to_first(s_lem_in *list)
     s_lem_in    *temp1;
     s_lem_in    *temp2;
 
-    if (list->id == 1)
+    if (list->start)
         return list;
     temp1 = list;
     while (!temp1->next->start)
@@ -39,17 +39,37 @@ int     vertex_repeats(s_lem_in *first)
     return (0);
 }
 
-int     is_start(char *line)
+int     is_start(char **line, int i)
 {
-    if (!ft_strcmp("##start", line))
-        return 1;
+    while (i > 0)
+    {
+        if (!ft_strcmp("##start", line[i]))
+            return 1;
+        else if (line[i][0] == '#')
+        {
+            i--;
+            continue;
+        }
+        else
+            return (0);
+    }
     return (0);
 }
 
-int     is_end(char *line)
+int     is_end(char **line, int i)
 {
-    if (!ft_strcmp("##end", line))
-        return 1;
+    while (i > 0)
+    {
+        if (!ft_strcmp("##end", line[i]))
+            return 1;
+        else if (line[i][0] == '#')
+        {
+            i--;
+            continue;
+        }
+        else
+            return (0);
+    }
     return (0);
 }
 

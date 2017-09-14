@@ -40,7 +40,11 @@ int         add_route(s_lem_in *list, char *s1, char *s2)
         return (0);
     temp = first;
     while (first->route)
+    {
+        if (first->route->id == second->id)
+            return (1);
         first = first->route;
+    }
     first->route = ft_copy(second);
     while (second->route)
         second = second->route;
@@ -110,9 +114,9 @@ s_lem_in    *fill_vertex_list(char **file_array)
                 return NULL;
             }
             id++;
-            if (is_start(file_array[i - 1]))
+            if (is_start(file_array, i - 1))
                 list->start = 1;
-            if (is_end(file_array[i - 1]))
+            if (is_end(file_array, i - 1))
                 list->end = 1;
         }
         i++;
