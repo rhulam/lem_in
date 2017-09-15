@@ -31,6 +31,12 @@ CMakeFiles/lem_in.dir/main.c.o: ../libft/get_next_line/get_next_line.h
 CMakeFiles/lem_in.dir/main.c.o: ../libft/libft.h
 CMakeFiles/lem_in.dir/main.c.o: ../main.c
 
+CMakeFiles/lem_in.dir/opimize_list.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/opimize_list.c.o: ../libft/ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/opimize_list.c.o: ../libft/get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/opimize_list.c.o: ../libft/libft.h
+CMakeFiles/lem_in.dir/opimize_list.c.o: ../opimize_list.c
+
 CMakeFiles/lem_in.dir/routers.c.o: ../lem_in.h
 CMakeFiles/lem_in.dir/routers.c.o: ../libft/ft_printf/ft_printf.h
 CMakeFiles/lem_in.dir/routers.c.o: ../libft/get_next_line/get_next_line.h

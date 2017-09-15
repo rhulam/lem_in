@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/list_create.c.o"
   "CMakeFiles/lem_in.dir/help_fill_list.c.o"
   "CMakeFiles/lem_in.dir/routers.c.o"
+  "CMakeFiles/lem_in.dir/opimize_list.c.o"
   "../lem_in.pdb"
   "../lem_in"
 )
