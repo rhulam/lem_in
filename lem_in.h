@@ -35,5 +35,7 @@ s_lem_in    *start_to_first(s_lem_in *list);
 void        create_routes(s_lem_in *list, int ants);
 s_lem_in    *ft_copy(s_lem_in *list);
 s_lem_in    *sort_routes(s_lem_in *routes);
+s_lem_in    *filter_crossing_routes(s_lem_in *routes);
+void        start_ants(s_lem_in *routes, int* ants_arr, int ants);
 
 #endif

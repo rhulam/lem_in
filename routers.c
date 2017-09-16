@@ -169,11 +169,57 @@ void    routes_exists(s_lem_in *list, s_lem_in **routes, int end, s_lem_in *rout
     }
 }
 
+s_lem_in    *end_room(s_lem_in *list)
+{
+    s_lem_in    *temp;
+
+    temp = list;
+    temp = list->route;
+    while (temp->route)
+        temp = temp->route;
+    return temp;
+}
+
+//s_lem_in    *add_prev(s_lem_in *routes)
+//{
+//    s_lem_in    *end;
+//    s_lem_in    *temp;
+//    s_lem_in    *previous;
+//
+//    temp = routes;
+//    while (temp)
+//    {
+//        end = end_room(temp);
+//        temp->prev = end;
+//        while (temp->route)
+//        {
+//
+//        }
+//    }
+//}
+
+int         *create_ants_arr(s_lem_in *routes, int ants)
+{
+    int     *arr;
+    int     i;
+
+    i = 0;
+    arr = malloc(sizeof(int) * (ants + 1));
+    while (i < ants)
+    {
+        arr[i] = 1;
+        i++;
+    }
+    arr[i] = 0;
+    return arr;
+}
+
 void        create_routes(s_lem_in *list, int ants)
 {
     s_lem_in    *routes;
     s_lem_in    *route;
     s_lem_in    *temp;
+    int         *ants_arr;
 
     routes = NULL;
     route = NULL;
@@ -182,14 +228,16 @@ void        create_routes(s_lem_in *list, int ants)
     if (!routes)
         error();
     routes = sort_routes(routes);
-    
+    routes = filter_crossing_routes(routes);
+    ants_arr = create_ants_arr(routes, ants);
+    start_ants(routes, ants_arr, ants);
 //    while (routes)
 //    {
 //        temp = routes;
 //        ft_printf("Length: %d\n", temp->length);
 //        while (temp)
 //        {
-//            ft_printf("ID: %d\n", temp->id);
+//            ft_printf("NAME: %s\n", temp->name);
 //            temp = temp->route;
 //        }
 //        ft_printf("\n");

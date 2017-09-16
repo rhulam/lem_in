@@ -136,6 +136,33 @@ libft.a/fast:
 	$(MAKE) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/build
 .PHONY : libft.a/fast
 
+ants.o: ants.c.o
+
+.PHONY : ants.o
+
+# target to build an object file
+ants.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ants.c.o
+.PHONY : ants.c.o
+
+ants.i: ants.c.i
+
+.PHONY : ants.i
+
+# target to preprocess a source file
+ants.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ants.c.i
+.PHONY : ants.c.i
+
+ants.s: ants.c.s
+
+.PHONY : ants.s
+
+# target to generate assembly for a file
+ants.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ants.c.s
+.PHONY : ants.c.s
+
 error.o: error.c.o
 
 .PHONY : error.o
@@ -2684,6 +2711,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... lem_in"
 	@echo "... libft.a"
+	@echo "... ants.o"
+	@echo "... ants.i"
+	@echo "... ants.s"
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"

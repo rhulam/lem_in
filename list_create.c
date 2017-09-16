@@ -12,6 +12,7 @@ s_lem_in    *ft_copy(s_lem_in *list)
     copy->start = list->start;
     copy->end = list->end;
     copy->length = list->length;
+    copy->ant = 0;
     copy->next = list;
     copy->route = NULL;
     return copy;

@@ -1,5 +1,55 @@
 #include "lem_in.h"
 
+int             crossing(s_lem_in *l1, s_lem_in *l2)
+{
+    s_lem_in    *temp1;
+    s_lem_in    *temp2;
+
+    if (!l1 || !l2)
+        return (0);
+    temp1 = l1->route;
+    while (temp1)
+    {
+        temp2 = l2->route;
+        while (temp2)
+        {
+            if (temp2->id == temp1->id && temp2->route)
+                return (1);
+            temp2 = temp2->route;
+        }
+        temp1 = temp1->route;
+    }
+    return (0);
+}
+
+s_lem_in        *filter_crossing_routes(s_lem_in *routes)
+{
+    s_lem_in    *temp;
+    s_lem_in    *temp2;
+    s_lem_in    *previous;
+
+    temp = routes;
+    while (temp)
+    {
+        temp2 = temp->next;
+        previous = temp;
+        while (temp2)
+        {
+            if (crossing(temp, temp2))
+            {
+                previous->next = temp2->next;
+                temp2->next = NULL;
+                free_list(temp2);
+                temp2 = previous;
+            }
+            previous = temp2;
+            temp2 = temp2->next;
+        }
+        temp = temp->next;
+    }
+    return routes;
+}
+
 int             the_same(s_lem_in *a, s_lem_in *b)
 {
     s_lem_in    *temp;
@@ -35,7 +85,6 @@ s_lem_in        *sort_routes(s_lem_in *routes)
         {
             if (temp->length > temp2->length)
             {
-                //ft_printf("First: %d\nSecond: %d\n\n", temp->length, temp2->length);
                 if (previous)
                     previous->next = temp2;
                 else

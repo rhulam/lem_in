@@ -113,6 +113,7 @@ s_lem_in    *create_vertex(char *line, int id)
     list->start = 0;
     list->end = 0;
     list->length;
+    list->ant = 0;
     list->next = NULL;
     list->route = NULL;
     return list;
