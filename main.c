@@ -1,22 +1,24 @@
 #include "lem_in.h"
 
-void    validation(char **file_array)
+char    **file_array;
+
+void    validation()
 {
     int     i;
 
     i = 1;
     if (!file_array[0])
     {
-        free_array(file_array);
+        free_array();
         error();
     }
-    if (start_end_count_check(file_array) && ant_checker(file_array[0]))
+    if (start_end_count_check() && ant_checker())
     {
         while (file_array[i])
         {
             if (!line_validator(file_array[i]))
             {
-                free_array(file_array);
+                free_array();
                 error();
             }
             i++;
@@ -24,14 +26,13 @@ void    validation(char **file_array)
     }
     else
     {
-        free_array(file_array);
+        free_array();
         error();
     }
 }
 
 int     main(void)
 {
-    char    **file_array;
     char    *string;
     int     i;
     i = 0;
@@ -44,7 +45,7 @@ int     main(void)
     }
     file_array[i] = NULL;
     free(string);
-    validation(file_array);
-    fill_adjacency_list(file_array);
+    validation();
+    fill_adjacency_list();
     return 0;
 }

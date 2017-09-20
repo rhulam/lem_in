@@ -217,6 +217,33 @@ free.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/free.c.s
 .PHONY : free.c.s
 
+help.o: help.c.o
+
+.PHONY : help.o
+
+# target to build an object file
+help.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help.c.o
+.PHONY : help.c.o
+
+help.i: help.c.i
+
+.PHONY : help.i
+
+# target to preprocess a source file
+help.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help.c.i
+.PHONY : help.c.i
+
+help.s: help.c.s
+
+.PHONY : help.s
+
+# target to generate assembly for a file
+help.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help.c.s
+.PHONY : help.c.s
+
 help_fill_list.o: help_fill_list.c.o
 
 .PHONY : help_fill_list.o
@@ -2720,6 +2747,9 @@ help:
 	@echo "... free.o"
 	@echo "... free.i"
 	@echo "... free.s"
+	@echo "... help.o"
+	@echo "... help.i"
+	@echo "... help.s"
 	@echo "... help_fill_list.o"
 	@echo "... help_fill_list.i"
 	@echo "... help_fill_list.s"

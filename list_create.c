@@ -1,5 +1,7 @@
 #include "lem_in.h"
 
+char    **file_array;
+
 s_lem_in    *ft_copy(s_lem_in *list)
 {
     s_lem_in    *copy;
@@ -53,7 +55,7 @@ int         add_route(s_lem_in *list, char *s1, char *s2)
     return (1);
 }
 
-int         fill_routes(char **file_array, s_lem_in *first)
+int         fill_routes(s_lem_in *first)
 {
     int         i;
     int         j;
@@ -85,7 +87,7 @@ int         fill_routes(char **file_array, s_lem_in *first)
     return (1);
 }
 
-s_lem_in    *fill_vertex_list(char **file_array)
+s_lem_in    *fill_vertex_list()
 {
     int         i;
     s_lem_in    *list;
@@ -115,9 +117,9 @@ s_lem_in    *fill_vertex_list(char **file_array)
                 return NULL;
             }
             id++;
-            if (is_start(file_array, i - 1))
+            if (is_start(i - 1))
                 list->start = 1;
-            if (is_end(file_array, i - 1))
+            if (is_end(i - 1))
                 list->end = 1;
         }
         i++;
@@ -125,40 +127,18 @@ s_lem_in    *fill_vertex_list(char **file_array)
     return first;
 }
 
-void    fill_adjacency_list(char **file_array)
+void    fill_adjacency_list()
 {
     s_lem_in    *list;
     s_lem_in    *temp;
 
-    list = fill_vertex_list(file_array);
+    list = fill_vertex_list();
     if (!list)
         error();
     if (vertex_repeats(list))
         error();
-    if (!fill_routes(file_array, list))
+    if (!fill_routes(list))
         error();
     list = start_to_first(list);
     create_routes(list, ft_atoi(file_array[0]));
-//    while (list)
-//    {
-//        temp = list;
-//        while (temp)
-//        {
-//            ft_printf("id: %d", temp->id);
-//            if (temp->start)
-//                ft_printf(" start");
-//            if (temp->end)
-//                ft_printf(" end");
-//            temp = temp->route;
-//            ft_printf("\n");
-//        }
-//        ft_printf("\n");
-//        list = list->next;
-//    }
-//    while (list)
-//    {
-//        sleep(1);
-//        ft_printf("%s\n", list->name);
-//        list = list->route->next;
-//    }
 }

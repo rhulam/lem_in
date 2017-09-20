@@ -7,6 +7,6 @@ FILE(GLOB libft_sources libft/*.c libft/*.h libft/get_next_line/*.c libft/ft_pri
 
 ADD_LIBRARY(libft.a STATIC ${libft_sources})
 
-set(SOURCE_FILES main.c lem_in.h error.c free.c validation_after_read.c list_create.c help_fill_list.c routers.c opimize_list.c ants.c)
+set(SOURCE_FILES main.c lem_in.h error.c free.c validation_after_read.c list_create.c help_fill_list.c routers.c opimize_list.c ants.c help.c)
 add_executable(lem_in ${SOURCE_FILES})
 target_link_libraries(lem_in libft.a)

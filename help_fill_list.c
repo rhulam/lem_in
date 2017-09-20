@@ -1,5 +1,7 @@
 #include "lem_in.h"
 
+char    **file_array;
+
 s_lem_in    *start_to_first(s_lem_in *list)
 {
     s_lem_in    *temp1;
@@ -39,13 +41,13 @@ int     vertex_repeats(s_lem_in *first)
     return (0);
 }
 
-int     is_start(char **line, int i)
+int     is_start(int i)
 {
     while (i > 0)
     {
-        if (!ft_strcmp("##start", line[i]))
+        if (!ft_strcmp("##start", file_array[i]))
             return 1;
-        else if (line[i][0] == '#')
+        else if (file_array[i][0] == '#')
         {
             i--;
             continue;
@@ -56,13 +58,13 @@ int     is_start(char **line, int i)
     return (0);
 }
 
-int     is_end(char **line, int i)
+int     is_end(int i)
 {
     while (i > 0)
     {
-        if (!ft_strcmp("##end", line[i]))
+        if (!ft_strcmp("##end", file_array[i]))
             return 1;
-        else if (line[i][0] == '#')
+        else if (file_array[i][0] == '#')
         {
             i--;
             continue;

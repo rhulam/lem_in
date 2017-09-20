@@ -1,7 +1,5 @@
 #include "lem_in.h"
 
-int     allways = 0;
-
 int         find_end(s_lem_in *list)
 {
     s_lem_in    *temp;
@@ -10,33 +8,6 @@ int         find_end(s_lem_in *list)
     while (!temp->end)
         temp = temp->next;
     return (temp->id);
-}
-
-int         list_length(s_lem_in *list)
-{
-    s_lem_in    *temp;
-    int         i;
-
-    i = 0;
-    if (!list)
-        return (0);
-    temp = list;
-    while (temp)
-    {
-        temp = temp->next;
-        i++;
-    }
-    return i;
-}
-
-int         last_room_id(s_lem_in *list)
-{
-    s_lem_in    *temp;
-
-    temp = list;
-    while (temp->next)
-        temp = temp->next;
-    return temp->id;
 }
 
 int         passed_vertex(s_lem_in *route, s_lem_in *list)
@@ -98,7 +69,6 @@ s_lem_in        *add_new_route(s_lem_in *routes, s_lem_in *route)
     i = 1;
     while (temp)
     {
-//        ft_printf("%d ", temp->id);
         temp2->route = ft_copy(temp);
         temp2 = temp2->route;
         temp2->next = NULL;
@@ -106,9 +76,6 @@ s_lem_in        *add_new_route(s_lem_in *routes, s_lem_in *route)
         i++;
     }
     current->length = i;
-//    ft_printf("\n");
-    allways++;
-//    ft_printf("%d\n", allways);
     return routes;
 }
 
@@ -123,49 +90,24 @@ void    free_last_list(s_lem_in *list)
     temp->next = NULL;
 }
 
-void    print_route(s_lem_in *route)
-{
-    s_lem_in    *temp;
-
-    ft_printf("Current Route: ");
-    temp = route;
-    while (temp)
-    {
-        ft_printf("%d ", temp->id);
-        temp = temp->next;
-    }
-    ft_printf("\n");
-}
-
 void    routes_exists(s_lem_in *list, s_lem_in **routes, int end, s_lem_in *route)
 {
-
-    //sleep(1);
-    //ft_printf("\n");
-    //ft_printf("Enter: %d\n", list->id);
     route = push_to_last(route, ft_copy(list));
-    //print_route(route);
     if (list->id == end)
     {
-        //ft_printf("Find!\n");
         *routes = add_new_route(*routes, route);
         return;
     }
     while (list)
     {
-        //ft_printf("In loop: %d\n", list->id);
         if (!passed_vertex(route, list))
         {
-            //ft_printf("Pass: %d\n", list->id);
             routes_exists(list->next, routes, end, route);
             free_last_list(route);
         }
-        //ft_printf("Last route id: %d\n", last_room_id(route));
-        //ft_printf("Before iter: %d\n", list->id);
         list = list->route;
         if (!list)
             continue;
-        //ft_printf("After iter: %d\n", list->id);
     }
 }
 
@@ -179,24 +121,6 @@ s_lem_in    *end_room(s_lem_in *list)
         temp = temp->route;
     return temp;
 }
-
-//s_lem_in    *add_prev(s_lem_in *routes)
-//{
-//    s_lem_in    *end;
-//    s_lem_in    *temp;
-//    s_lem_in    *previous;
-//
-//    temp = routes;
-//    while (temp)
-//    {
-//        end = end_room(temp);
-//        temp->prev = end;
-//        while (temp->route)
-//        {
-//
-//        }
-//    }
-//}
 
 int         *create_ants_arr(s_lem_in *routes, int ants)
 {
@@ -220,28 +144,22 @@ void        create_routes(s_lem_in *list, int ants)
     s_lem_in    *route;
     s_lem_in    *temp;
     int         *ants_arr;
+    int         i;
 
     routes = NULL;
     route = NULL;
-    //ft_printf("%d\n", find_end(list));
+    i = 0;
     routes_exists(list, &routes, find_end(list), route);
     if (!routes)
         error();
     routes = sort_routes(routes);
     routes = filter_crossing_routes(routes);
+    while (file_array[i])
+    {
+        ft_printf("%s\n", file_array[i]);
+        i++;
+    }
+    ft_printf("\n");
     ants_arr = create_ants_arr(routes, ants);
     start_ants(routes, ants_arr, ants);
-//    while (routes)
-//    {
-//        temp = routes;
-//        ft_printf("Length: %d\n", temp->length);
-//        while (temp)
-//        {
-//            ft_printf("NAME: %s\n", temp->name);
-//            temp = temp->route;
-//        }
-//        ft_printf("\n");
-//        routes = routes->next;
-//    }
-    ft_printf("%d\n", allways);
 }

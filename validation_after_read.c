@@ -1,5 +1,7 @@
 #include "lem_in.h"
 
+char    **file_array;
+
 int valid_route(char *line)
 {
     int     i;
@@ -45,7 +47,7 @@ int valid_numeric_line(char *line)
     return (1);
 }
 
-int start_end_count_check(char **file_array)
+int start_end_count_check()
 {
     int     i;
     int     start_count;
@@ -99,11 +101,13 @@ int start_end_count_check(char **file_array)
     return (0);
 }
 
-int ant_checker(char *first_line)
+int ant_checker()
 {
     int     i;
+    char    *first_line;
 
     i = 0;
+    first_line = file_array[0];
     while(isdigit(first_line[i]))
         i++;
     if (first_line[i] == '\0' && !ft_strcmp(ft_itoa(ft_atoi(first_line)), first_line) && ft_atoi(first_line) > 0)

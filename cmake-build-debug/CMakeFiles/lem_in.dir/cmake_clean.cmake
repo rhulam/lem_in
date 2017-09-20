@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/routers.c.o"
   "CMakeFiles/lem_in.dir/opimize_list.c.o"
   "CMakeFiles/lem_in.dir/ants.c.o"
+  "CMakeFiles/lem_in.dir/help.c.o"
   "../lem_in.pdb"
   "../lem_in"
 )
