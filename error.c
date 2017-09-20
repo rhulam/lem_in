@@ -1,7 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/20 15:44:13 by rhulam            #+#    #+#             */
+/*   Updated: 2017/09/20 15:45:45 by rhulam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-void error()
+void	error(void)
 {
-    ft_printf("%s\n", "ERROR");
-    exit(-1);
+	ft_printf("%s\n", "ERROR");
+	exit(-1);
+}
+
+void    *free_vertexes(t_lem_in *first)
+{
+        free_list(first);
+        return (NULL);
 }

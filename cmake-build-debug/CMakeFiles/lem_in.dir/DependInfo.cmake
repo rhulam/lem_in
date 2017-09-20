@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_CHECK_C
   "/nfs/2016/r/rhulam/lem_in/error.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/error.c.o"
   "/nfs/2016/r/rhulam/lem_in/free.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/free.c.o"
   "/nfs/2016/r/rhulam/lem_in/help.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/help.c.o"
+  "/nfs/2016/r/rhulam/lem_in/help2.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/help2.c.o"
   "/nfs/2016/r/rhulam/lem_in/help_fill_list.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/help_fill_list.c.o"
   "/nfs/2016/r/rhulam/lem_in/list_create.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/list_create.c.o"
   "/nfs/2016/r/rhulam/lem_in/main.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/main.c.o"
-  "/nfs/2016/r/rhulam/lem_in/opimize_list.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/opimize_list.c.o"
+  "/nfs/2016/r/rhulam/lem_in/optimize_list.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/optimize_list.c.o"
   "/nfs/2016/r/rhulam/lem_in/routers.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/routers.c.o"
   "/nfs/2016/r/rhulam/lem_in/validation_after_read.c" "/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/validation_after_read.c.o"
   )

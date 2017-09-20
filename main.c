@@ -1,51 +1,97 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/20 17:00:44 by rhulam            #+#    #+#             */
+/*   Updated: 2017/09/20 17:01:32 by rhulam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-char    **file_array;
+char		**g_file_array;
 
-void    validation()
+int             start_end_count_check_3(int *i)
 {
-    int     i;
-
-    i = 1;
-    if (!file_array[0])
+    while (g_file_array[*i])
     {
-        free_array();
-        error();
-    }
-    if (start_end_count_check() && ant_checker())
-    {
-        while (file_array[i])
+        if (valid_numeric_line(g_file_array[*i]))
+            break ;
+        else if (g_file_array[*i][0] == '#' && g_file_array[*i][1] != '#' && ft_strcmp(g_file_array[*i], "##start"))
         {
-            if (!line_validator(file_array[i]))
-            {
-                free_array();
-                error();
-            }
-            i++;
+            (*i)++;
+            continue;
         }
+        else
+            return (0);
     }
-    else
-    {
-        free_array();
-        error();
-    }
+    return (1);
 }
 
-int     main(void)
+int				*create_ants_arr(t_lem_in *routes, int ants)
 {
-    char    *string;
-    int     i;
+    int			*arr;
+    int			i;
+
     i = 0;
-    file_array = malloc(sizeof(char *) * 4096);
-    file_array[0] = NULL;
-    while (get_next_line(0, &string))
+    arr = malloc(sizeof(int) * (ants + 1));
+    while (i < ants)
     {
-        file_array[i++] = ft_strdup(string);
-        free(string);
+        arr[i] = 1;
+        i++;
     }
-    file_array[i] = NULL;
-    free(string);
-    validation();
-    fill_adjacency_list();
-    return 0;
+    arr[i] = 0;
+    return (arr);
+}
+
+void		validation(void)
+{
+	int		i;
+
+	i = 1;
+	if (!g_file_array[0])
+	{
+		free_array();
+		error();
+	}
+	if (start_end_count_check() && ant_checker())
+	{
+		while (g_file_array[i])
+		{
+			if (!line_validator(g_file_array[i]))
+			{
+				free_array();
+				error();
+			}
+			i++;
+		}
+	}
+	else
+	{
+		free_array();
+		error();
+	}
+}
+
+int			main(void)
+{
+	char	*string;
+	int		i;
+
+	i = 0;
+	g_file_array = malloc(sizeof(char *) * 4096);
+	g_file_array[0] = NULL;
+	while (get_next_line(0, &string))
+	{
+		g_file_array[i++] = ft_strdup(string);
+		free(string);
+	}
+	g_file_array[i] = NULL;
+	free(string);
+	validation();
+	fill_adjacency_list();
+	return (0);
 }

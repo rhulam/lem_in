@@ -26,9 +26,9 @@ int				empty(int *arr, int ants)
 	return (1);
 }
 
-s_lem_in		*find_empty(s_lem_in *list)
+t_lem_in		*find_empty(t_lem_in *list)
 {
-	s_lem_in	*temp;
+	t_lem_in	*temp;
 
 	temp = list;
 	while (temp)
@@ -40,10 +40,10 @@ s_lem_in		*find_empty(s_lem_in *list)
 	return (NULL);
 }
 
-int				find_route(s_lem_in *routes, int ant, int ants)
+int				find_route(t_lem_in *routes, int ant, int ants)
 {
-	s_lem_in	*temp;
-	s_lem_in	*temp2;
+	t_lem_in	*temp;
+	t_lem_in	*temp2;
 
 	temp = routes;
 	while (temp)
@@ -66,10 +66,10 @@ int				find_route(s_lem_in *routes, int ant, int ants)
 	return (0);
 }
 
-int				move_it(s_lem_in *routes, int ant, int ants, int j)
+int				move_it(t_lem_in *routes, int ant, int ants, int j)
 {
-	s_lem_in	*temp;
-	s_lem_in	*temp2;
+	t_lem_in	*temp;
+	t_lem_in	*temp2;
 
 	temp = routes;
 	while (temp)
@@ -95,7 +95,7 @@ int				move_it(s_lem_in *routes, int ant, int ants, int j)
 	return (find_route(routes, ant, ants));
 }
 
-void			start_ants(s_lem_in *routes, int *ants_arr, int ants)
+void			start_ants(t_lem_in *routes, int *ants_arr, int ants)
 {
 	int			i;
 	int			j;

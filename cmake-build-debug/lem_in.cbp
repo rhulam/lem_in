@@ -138,6 +138,9 @@
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/help.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhulam/lem_in/help2.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/help_fill_list.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -417,7 +420,7 @@
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/main.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhulam/lem_in/opimize_list.c">
+		<Unit filename="/nfs/2016/r/rhulam/lem_in/optimize_list.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/routers.c">

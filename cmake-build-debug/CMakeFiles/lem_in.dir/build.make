@@ -225,28 +225,28 @@ CMakeFiles/lem_in.dir/routers.c.o.provides: CMakeFiles/lem_in.dir/routers.c.o.re
 CMakeFiles/lem_in.dir/routers.c.o.provides.build: CMakeFiles/lem_in.dir/routers.c.o
 
 
-CMakeFiles/lem_in.dir/opimize_list.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/opimize_list.c.o: ../opimize_list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/lem_in.dir/opimize_list.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/opimize_list.c.o   -c /nfs/2016/r/rhulam/lem_in/opimize_list.c
+CMakeFiles/lem_in.dir/optimize_list.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/optimize_list.c.o: ../optimize_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/lem_in.dir/optimize_list.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/optimize_list.c.o   -c /nfs/2016/r/rhulam/lem_in/optimize_list.c
 
-CMakeFiles/lem_in.dir/opimize_list.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/opimize_list.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhulam/lem_in/opimize_list.c > CMakeFiles/lem_in.dir/opimize_list.c.i
+CMakeFiles/lem_in.dir/optimize_list.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/optimize_list.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhulam/lem_in/optimize_list.c > CMakeFiles/lem_in.dir/optimize_list.c.i
 
-CMakeFiles/lem_in.dir/opimize_list.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/opimize_list.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhulam/lem_in/opimize_list.c -o CMakeFiles/lem_in.dir/opimize_list.c.s
+CMakeFiles/lem_in.dir/optimize_list.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/optimize_list.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhulam/lem_in/optimize_list.c -o CMakeFiles/lem_in.dir/optimize_list.c.s
 
-CMakeFiles/lem_in.dir/opimize_list.c.o.requires:
+CMakeFiles/lem_in.dir/optimize_list.c.o.requires:
 
-.PHONY : CMakeFiles/lem_in.dir/opimize_list.c.o.requires
+.PHONY : CMakeFiles/lem_in.dir/optimize_list.c.o.requires
 
-CMakeFiles/lem_in.dir/opimize_list.c.o.provides: CMakeFiles/lem_in.dir/opimize_list.c.o.requires
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/opimize_list.c.o.provides.build
-.PHONY : CMakeFiles/lem_in.dir/opimize_list.c.o.provides
+CMakeFiles/lem_in.dir/optimize_list.c.o.provides: CMakeFiles/lem_in.dir/optimize_list.c.o.requires
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/optimize_list.c.o.provides.build
+.PHONY : CMakeFiles/lem_in.dir/optimize_list.c.o.provides
 
-CMakeFiles/lem_in.dir/opimize_list.c.o.provides.build: CMakeFiles/lem_in.dir/opimize_list.c.o
+CMakeFiles/lem_in.dir/optimize_list.c.o.provides.build: CMakeFiles/lem_in.dir/optimize_list.c.o
 
 
 CMakeFiles/lem_in.dir/ants.c.o: CMakeFiles/lem_in.dir/flags.make
@@ -297,6 +297,30 @@ CMakeFiles/lem_in.dir/help.c.o.provides: CMakeFiles/lem_in.dir/help.c.o.requires
 CMakeFiles/lem_in.dir/help.c.o.provides.build: CMakeFiles/lem_in.dir/help.c.o
 
 
+CMakeFiles/lem_in.dir/help2.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/help2.c.o: ../help2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/lem_in.dir/help2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/help2.c.o   -c /nfs/2016/r/rhulam/lem_in/help2.c
+
+CMakeFiles/lem_in.dir/help2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/help2.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhulam/lem_in/help2.c > CMakeFiles/lem_in.dir/help2.c.i
+
+CMakeFiles/lem_in.dir/help2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/help2.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhulam/lem_in/help2.c -o CMakeFiles/lem_in.dir/help2.c.s
+
+CMakeFiles/lem_in.dir/help2.c.o.requires:
+
+.PHONY : CMakeFiles/lem_in.dir/help2.c.o.requires
+
+CMakeFiles/lem_in.dir/help2.c.o.provides: CMakeFiles/lem_in.dir/help2.c.o.requires
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help2.c.o.provides.build
+.PHONY : CMakeFiles/lem_in.dir/help2.c.o.provides
+
+CMakeFiles/lem_in.dir/help2.c.o.provides.build: CMakeFiles/lem_in.dir/help2.c.o
+
+
 # Object files for target lem_in
 lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/main.c.o" \
@@ -306,9 +330,10 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/list_create.c.o" \
 "CMakeFiles/lem_in.dir/help_fill_list.c.o" \
 "CMakeFiles/lem_in.dir/routers.c.o" \
-"CMakeFiles/lem_in.dir/opimize_list.c.o" \
+"CMakeFiles/lem_in.dir/optimize_list.c.o" \
 "CMakeFiles/lem_in.dir/ants.c.o" \
-"CMakeFiles/lem_in.dir/help.c.o"
+"CMakeFiles/lem_in.dir/help.c.o" \
+"CMakeFiles/lem_in.dir/help2.c.o"
 
 # External object files for target lem_in
 lem_in_EXTERNAL_OBJECTS =
@@ -320,13 +345,14 @@ lem_in_EXTERNAL_OBJECTS =
 ../lem_in: CMakeFiles/lem_in.dir/list_create.c.o
 ../lem_in: CMakeFiles/lem_in.dir/help_fill_list.c.o
 ../lem_in: CMakeFiles/lem_in.dir/routers.c.o
-../lem_in: CMakeFiles/lem_in.dir/opimize_list.c.o
+../lem_in: CMakeFiles/lem_in.dir/optimize_list.c.o
 ../lem_in: CMakeFiles/lem_in.dir/ants.c.o
 ../lem_in: CMakeFiles/lem_in.dir/help.c.o
+../lem_in: CMakeFiles/lem_in.dir/help2.c.o
 ../lem_in: CMakeFiles/lem_in.dir/build.make
 ../lem_in: liblibft.a.a
 ../lem_in: CMakeFiles/lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable ../lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/2016/r/rhulam/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable ../lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -341,9 +367,10 @@ CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/validation_after_read.c.o.
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/list_create.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/help_fill_list.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/routers.c.o.requires
-CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/opimize_list.c.o.requires
+CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/optimize_list.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/ants.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/help.c.o.requires
+CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/help2.c.o.requires
 
 .PHONY : CMakeFiles/lem_in.dir/requires
 
