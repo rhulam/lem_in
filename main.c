@@ -85,13 +85,17 @@ int			main(void)
 	char	*string;
 	int		i;
 
-	i = 0;
 	g_path = 0;
 	g_moves = 0;
 	g_file_array = malloc(sizeof(char *) * 4096);
 	g_file_array[0] = NULL;
-	while (get_next_line(0, &string))
+	while ((i = get_next_line(0, &string)))
 	{
+		if (i < 0)
+		{
+			free_array();
+			error();
+		}
 		g_file_array[i++] = ft_strdup(string);
 		free(string);
 	}
