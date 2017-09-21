@@ -6,13 +6,11 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 17:28:33 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/20 17:33:59 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/21 17:37:13 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-char			**g_file_array;
 
 int				passed_vertex(t_lem_in *route, t_lem_in *list)
 {
@@ -75,14 +73,14 @@ t_lem_in		*add_new_route(t_lem_in *routes, t_lem_in *route)
 	return (routes);
 }
 
-void			routes_exists(t_lem_in *list, t_lem_in **routes, int end,
+t_lem_in		*routes_exists(t_lem_in *list, t_lem_in **routes, int end,
 							t_lem_in *route)
 {
 	route = push_to_last(route, ft_copy(list));
 	if (list->id == end)
 	{
 		*routes = add_new_route(*routes, route);
-		return ;
+		return (route);
 	}
 	while (list)
 	{
@@ -95,6 +93,7 @@ void			routes_exists(t_lem_in *list, t_lem_in **routes, int end,
 		if (!list)
 			continue;
 	}
+	return (route);
 }
 
 void			create_routes(t_lem_in *list, int ants)
@@ -108,19 +107,20 @@ void			create_routes(t_lem_in *list, int ants)
 	routes = NULL;
 	route = NULL;
 	i = 0;
-	routes_exists(list, &routes, find_end(list), route);
+	route = routes_exists(list, &routes, find_end(list), route);
 	if (!routes)
 		error();
 	temp = routes;
+	free_last_list(route);
+	free_full_list(list);
 	route = NULL;
 	routes = sort_routes(routes, temp, route);
 	routes = filter_crossing_routes(routes);
 	while (g_file_array[i])
-	{
-		ft_printf("%s\n", g_file_array[i]);
-		i++;
-	}
+		ft_printf("%s\n", g_file_array[i++]);
 	ft_printf("\n");
+	check_path(routes);
 	ants_arr = create_ants_arr(routes, ants);
 	start_ants(routes, ants_arr, ants);
+	free(ants_arr);
 }

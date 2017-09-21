@@ -12,8 +12,6 @@
 
 #include "lem_in.h"
 
-char		**g_file_array;
-
 int			valid_route(char *line)
 {
 	int		i;
@@ -108,7 +106,13 @@ int			ant_checker(void)
 
 int			line_validator(char *line)
 {
-	if (line[0] == '#')
+	if (line[0] == '#' && line[1] != '#')
+		return (1);
+	else if (!ft_strcmp(line, "##path"))
+		g_path = 1;
+	else if (!ft_strcmp(line, "##moves"))
+		g_moves = 1;
+	else if (!ft_strcmp(line, "##start") || !ft_strcmp(line, "##end"))
 		return (1);
 	else
 	{

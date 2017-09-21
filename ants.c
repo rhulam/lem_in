@@ -6,7 +6,7 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 15:10:36 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/20 15:22:27 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/21 16:58:57 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,10 @@ void			start_ants(t_lem_in *routes, int *ants_arr, int ants)
 {
 	int			i;
 	int			j;
+	int			c;
 
 	j = 0;
+	c = 0;
 	while (!empty(ants_arr, ants))
 	{
 		i = 0;
@@ -112,5 +114,9 @@ void			start_ants(t_lem_in *routes, int *ants_arr, int ants)
 			i++;
 		}
 		ft_printf("\n");
+		c++;
 	}
+	if (g_moves)
+		ft_printf("\n##moves\n%d\n", c);
+	free_full_list(routes);
 }

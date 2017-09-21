@@ -31,6 +31,12 @@ CMakeFiles/lem_in.dir/help2.c.o: ../libft/ft_printf/ft_printf.h
 CMakeFiles/lem_in.dir/help2.c.o: ../libft/get_next_line/get_next_line.h
 CMakeFiles/lem_in.dir/help2.c.o: ../libft/libft.h
 
+CMakeFiles/lem_in.dir/help3.c.o: ../help3.c
+CMakeFiles/lem_in.dir/help3.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/help3.c.o: ../libft/ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/help3.c.o: ../libft/get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/help3.c.o: ../libft/libft.h
+
 CMakeFiles/lem_in.dir/help_fill_list.c.o: ../help_fill_list.c
 CMakeFiles/lem_in.dir/help_fill_list.c.o: ../lem_in.h
 CMakeFiles/lem_in.dir/help_fill_list.c.o: ../libft/ft_printf/ft_printf.h

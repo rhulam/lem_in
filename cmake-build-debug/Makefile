@@ -271,6 +271,33 @@ help2.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help2.c.s
 .PHONY : help2.c.s
 
+help3.o: help3.c.o
+
+.PHONY : help3.o
+
+# target to build an object file
+help3.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help3.c.o
+.PHONY : help3.c.o
+
+help3.i: help3.c.i
+
+.PHONY : help3.i
+
+# target to preprocess a source file
+help3.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help3.c.i
+.PHONY : help3.c.i
+
+help3.s: help3.c.s
+
+.PHONY : help3.s
+
+# target to generate assembly for a file
+help3.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/help3.c.s
+.PHONY : help3.c.s
+
 help_fill_list.o: help_fill_list.c.o
 
 .PHONY : help_fill_list.o
@@ -2780,6 +2807,9 @@ help:
 	@echo "... help2.o"
 	@echo "... help2.i"
 	@echo "... help2.s"
+	@echo "... help3.o"
+	@echo "... help3.i"
+	@echo "... help3.s"
 	@echo "... help_fill_list.o"
 	@echo "... help_fill_list.i"
 	@echo "... help_fill_list.s"

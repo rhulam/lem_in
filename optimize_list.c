@@ -51,7 +51,7 @@ t_lem_in		*filter_crossing_routes(t_lem_in *routes)
 			{
 				previous->next = temp2->next;
 				temp2->next = NULL;
-				free_list(temp2);
+				free_full_list(temp2);
 				temp2 = previous;
 			}
 			previous = temp2;

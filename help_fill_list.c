@@ -6,13 +6,11 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 15:53:24 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/20 15:54:31 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/21 17:17:39 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-char			**g_file_array;
 
 t_lem_in		*start_to_first(t_lem_in *list)
 {
@@ -102,7 +100,7 @@ t_lem_in		*create_vertex(char *line, int id)
 	list->id = id;
 	l = 0;
 	l = find_a_backspace(line + i, l);
-	if (ft_strncmp(ft_itoa(ft_atoi(line + i)), line + i, l))
+	if (!check_ints(line, i, l))
 		return (free_a_vertex(list));
 	list->x = ft_atoi(line + i);
 	while (line[i] != ' ')
@@ -110,7 +108,7 @@ t_lem_in		*create_vertex(char *line, int id)
 	i++;
 	l = 0;
 	l = find_a_backspace(line + i, l);
-	if (ft_strncmp(ft_itoa(ft_atoi(line + i)), line + i, l))
+	if (!check_ints(line, i, l))
 		return (free_a_vertex(list));
 	fill_empty_vertex(list, line, i);
 	return (list);

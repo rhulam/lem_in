@@ -6,13 +6,11 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 16:22:47 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/20 16:59:47 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/21 17:32:31 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-char			**g_file_array;
 
 t_lem_in		*ft_copy(t_lem_in *list)
 {
@@ -93,6 +91,7 @@ t_lem_in		*fill_vertex_list(int i)
 	int			id;
 
 	first = NULL;
+	list = NULL;
 	id = 1;
 	while (g_file_array[++i])
 	{
@@ -117,7 +116,6 @@ t_lem_in		*fill_vertex_list(int i)
 void			fill_adjacency_list(void)
 {
 	t_lem_in	*list;
-	t_lem_in	*temp;
 	int			i;
 
 	i = -1;
