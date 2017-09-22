@@ -120,7 +120,7 @@ void			create_routes(t_lem_in *list, int ants)
 		ft_printf("%s\n", g_file_array[i++]);
 	ft_printf("\n");
 	check_path(routes);
-	ants_arr = create_ants_arr(routes, ants);
+	ants_arr = create_ants_arr(ants);
 	start_ants(routes, ants_arr, ants);
 	free(ants_arr);
 }

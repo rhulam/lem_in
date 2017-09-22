@@ -43,7 +43,7 @@ void	fill_empty_vertex(t_lem_in *list, char *line, int i)
 	list->y = ft_atoi(line + i);
 	list->start = 0;
 	list->end = 0;
-	list->length;
+	list->length = 0;
 	list->ant = 0;
 	list->next = NULL;
 	list->route = NULL;

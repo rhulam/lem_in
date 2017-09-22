@@ -67,7 +67,7 @@ int					the_same(t_lem_in *a, t_lem_in *b);
 void				sort_routes_2(t_lem_in **temp3, t_lem_in **temp2,
 					t_lem_in **temp, t_lem_in **previous2);
 int					add_new_route_2(t_lem_in **temp, t_lem_in **temp2);
-int					*create_ants_arr(t_lem_in *routes, int ants);
+int					*create_ants_arr(int ants);
 void				free_last_list(t_lem_in *list);
 int					find_end(t_lem_in *list);
 int					start_end_count_check_2(int *i, int *start_count);

@@ -35,7 +35,7 @@ int			start_end_count_check_3(int *i)
 	return (1);
 }
 
-int			*create_ants_arr(t_lem_in *routes, int ants)
+int			*create_ants_arr(int ants)
 {
 	int		*arr;
 	int		i;
@@ -84,14 +84,16 @@ int			main(void)
 {
 	char	*string;
 	int		i;
+	int     j;
 
 	g_path = 0;
 	g_moves = 0;
+    i = 0;
 	g_file_array = malloc(sizeof(char *) * 4096);
 	g_file_array[0] = NULL;
-	while ((i = get_next_line(0, &string)))
+	while ((j = get_next_line(0, &string)))
 	{
-		if (i < 0)
+		if (j < 0)
 		{
 			free_array();
 			error();
