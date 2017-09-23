@@ -127,5 +127,5 @@ void			fill_adjacency_list(void)
 	if (!fill_routes(list))
 		error();
 	list = start_to_first(list);
-	create_routes(list, ft_atoi(g_file_array[0]));
+	create_routes(list, get_ants());
 }

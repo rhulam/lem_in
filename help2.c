@@ -69,9 +69,7 @@ int				start_end_count_check_2(int *i, int *start_count)
 			if (valid_numeric_line(g_file_array[*i]))
 				break ;
 			else if ((g_file_array[*i][0] == '#' &&
-				g_file_array[*i][1] != '#') ||
-				!ft_strcmp(g_file_array[*i], "##path") ||
-				!ft_strcmp(g_file_array[*i], "##moves"))
+				g_file_array[*i][1] != '#'))
 			{
 				(*i)++;
 				continue;

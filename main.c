@@ -22,9 +22,7 @@ int			start_end_count_check_3(int *i)
 	{
 		if (valid_numeric_line(g_file_array[*i]))
 			break ;
-		else if ((g_file_array[*i][0] == '#' && g_file_array[*i][1] != '#') ||
-				!ft_strcmp(g_file_array[*i], "##path") ||
-				!ft_strcmp(g_file_array[*i], "##moves"))
+		else if ((g_file_array[*i][0] == '#' && g_file_array[*i][1] != '#'))
 		{
 			(*i)++;
 			continue;
@@ -55,13 +53,12 @@ void		validation(void)
 {
 	int		i;
 
-	i = 1;
 	if (!g_file_array[0])
 	{
 		free_array();
 		error();
 	}
-	if (start_end_count_check() && ant_checker())
+	if (start_end_count_check() && (i = ant_checker()))
 	{
 		while (g_file_array[i])
 		{
@@ -99,6 +96,11 @@ int			main(void)
 			error();
 		}
 		g_file_array[i++] = ft_strdup(string);
+        if (!valid(g_file_array[i - 1]))
+        {
+            free_array();
+            error();
+        }
 		free(string);
 	}
 	g_file_array[i] = NULL;
@@ -106,5 +108,6 @@ int			main(void)
 	validation();
 	fill_adjacency_list();
 	free_array();
+    while(1);
 	return (0);
 }

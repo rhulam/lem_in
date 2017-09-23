@@ -75,5 +75,7 @@ int					start_end_count_check_3(int *i);
 void				check_path(t_lem_in *routes);
 void				free_full_list(t_lem_in *list);
 int					check_ints(char *line, int i, int l);
+int                 get_ants(void);
+int                 valid(char *line);
 
 #endif

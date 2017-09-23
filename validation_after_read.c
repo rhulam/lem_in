@@ -92,28 +92,34 @@ int			start_end_count_check(void)
 int			ant_checker(void)
 {
 	int		i;
+    int     j;
 	char	*first_line;
 
 	i = 0;
-	first_line = g_file_array[0];
-	while (isdigit(first_line[i]))
-		i++;
-	if (first_line[i] == '\0' && !ft_strcmp(ft_itoa(ft_atoi(first_line)),
+    j = 0;
+    while (g_file_array[i][0] == '#' && g_file_array[i][1] != '#')
+    {
+        i++;
+        if (!g_file_array[i])
+            return (0);
+    }
+    first_line = g_file_array[i];
+	while (isdigit(first_line[j]))
+		j++;
+	if (first_line[j] == '\0' && !ft_strcmp(ft_itoa(ft_atoi(first_line)),
 					first_line) && ft_atoi(first_line) > 0)
-		return (1);
+		return (++i);
 	return (0);
 }
 
 int			line_validator(char *line)
 {
-	if (line[0] == '#' && line[1] != '#')
-		return (1);
-	else if (!ft_strcmp(line, "##path"))
+	if (!ft_strcmp(line, "##path"))
 		g_path = 1;
 	else if (!ft_strcmp(line, "##moves"))
 		g_moves = 1;
-	else if (!ft_strcmp(line, "##start") || !ft_strcmp(line, "##end"))
-		return (1);
+    else if (line[0] == '#')
+        return (1);
 	else
 	{
 		if (!valid_numeric_line(line) && !valid_route(line))

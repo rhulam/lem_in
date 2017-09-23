@@ -15,6 +15,7 @@
 void	error(void)
 {
 	ft_printf("%s\n", "ERROR");
+    while(1);
 	exit(-1);
 }
 

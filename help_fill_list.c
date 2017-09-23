@@ -103,11 +103,10 @@ t_lem_in		*create_vertex(char *line, int id)
 	if (!check_ints(line, i, l))
 		return (free_a_vertex(list));
 	list->x = ft_atoi(line + i);
-	while (line[i] != ' ')
-		i++;
-	i++;
 	l = 0;
-	l = find_a_backspace(line + i, l);
+    while (line[i] != ' ')
+        i++;
+    i++;
 	if (!check_ints(line, i, l))
 		return (free_a_vertex(list));
 	fill_empty_vertex(list, line, i);
