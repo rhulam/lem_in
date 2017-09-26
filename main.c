@@ -6,7 +6,7 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 17:00:44 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/21 17:34:59 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/26 14:58:09 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,37 +77,37 @@ void		validation(void)
 	}
 }
 
+void		free_and_error(void)
+{
+	free_array();
+	error();
+}
+
 int			main(void)
 {
 	char	*string;
 	int		i;
-	int     j;
+	int		j;
 
 	g_path = 0;
 	g_moves = 0;
-    i = 0;
+	i = 0;
 	g_file_array = malloc(sizeof(char *) * 4096);
 	g_file_array[0] = NULL;
 	while ((j = get_next_line(0, &string)))
 	{
 		if (j < 0)
-		{
-			free_array();
-			error();
-		}
+			free_and_error();
 		g_file_array[i++] = ft_strdup(string);
-        if (!valid(g_file_array[i - 1]))
-        {
-            free_array();
-            error();
-        }
+		if (!g_file_array[i - 1] || g_file_array[i - 1][0] == '\0')
+			free_and_error();
+		if (!valid(g_file_array[i - 1]))
+			free_and_error();
 		free(string);
 	}
 	g_file_array[i] = NULL;
 	free(string);
 	validation();
 	fill_adjacency_list();
-	free_array();
-    while(1);
 	return (0);
 }

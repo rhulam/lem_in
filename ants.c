@@ -119,4 +119,5 @@ void			start_ants(t_lem_in *routes, int *ants_arr, int ants)
 	if (g_moves)
 		ft_printf("\n##moves\n%d\n", c);
 	free_full_list(routes);
+	free_array();
 }

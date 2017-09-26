@@ -6,7 +6,7 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 15:44:13 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/21 17:02:43 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/26 14:47:09 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	error(void)
 {
 	ft_printf("%s\n", "ERROR");
-    while(1);
 	exit(-1);
 }
 
@@ -51,4 +50,23 @@ void	check_path(t_lem_in *routes)
 		temp = temp->next;
 	}
 	ft_printf("\n");
+}
+
+int		valid2(char *line, int *ants)
+{
+	if (find_ants(line) == 2)
+		*ants = 1;
+	else if (find_ants(line) == 1)
+		return (1);
+	else
+		return (0);
+	return (1);
+}
+
+int		valid3(int *start, int *end)
+{
+	if (*start || *end == 1)
+		return (0);
+	*start = 1;
+	return (1);
 }

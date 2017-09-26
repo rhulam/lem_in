@@ -104,9 +104,9 @@ t_lem_in		*create_vertex(char *line, int id)
 		return (free_a_vertex(list));
 	list->x = ft_atoi(line + i);
 	l = 0;
-    while (line[i] != ' ')
-        i++;
-    i++;
+	while (line[i] != ' ')
+		i++;
+	i++;
 	if (!check_ints(line, i, l))
 		return (free_a_vertex(list));
 	fill_empty_vertex(list, line, i);

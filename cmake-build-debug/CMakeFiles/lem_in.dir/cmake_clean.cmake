@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/help.c.o"
   "CMakeFiles/lem_in.dir/help2.c.o"
   "CMakeFiles/lem_in.dir/help3.c.o"
+  "CMakeFiles/lem_in.dir/help4.c.o"
   "../lem_in.pdb"
   "../lem_in"
 )

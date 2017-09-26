@@ -15,7 +15,7 @@ LIB_NAME = libft.a
 LIB_PATH = ./libft/
 LIB = $(addprefix $(LIB_PATH), $(LIB_NAME))
 CC = gcc
-SRC = main.c ants.c error.c free.c help.c help2.c help3.c help_fill_list.c list_create.c optimize_list.c routers.c validation_after_read.c
+SRC = main.c ants.c error.c free.c help.c help2.c help3.c help4.c help_fill_list.c list_create.c optimize_list.c routers.c validation_after_read.c
 FLAGS = -Wall -Wextra -Werror
 OBJ = $(SRC:.c=.o)
 

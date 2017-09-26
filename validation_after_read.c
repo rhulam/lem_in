@@ -6,7 +6,7 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 17:44:15 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/20 17:51:37 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/26 14:51:02 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,18 +92,18 @@ int			start_end_count_check(void)
 int			ant_checker(void)
 {
 	int		i;
-    int     j;
+	int		j;
 	char	*first_line;
 
 	i = 0;
-    j = 0;
-    while (g_file_array[i][0] == '#' && g_file_array[i][1] != '#')
-    {
-        i++;
-        if (!g_file_array[i])
-            return (0);
-    }
-    first_line = g_file_array[i];
+	j = 0;
+	while (g_file_array[i][0] == '#' && g_file_array[i][1] != '#')
+	{
+		i++;
+		if (!g_file_array[i])
+			return (0);
+	}
+	first_line = g_file_array[i];
 	while (isdigit(first_line[j]))
 		j++;
 	if (first_line[j] == '\0' && !ft_strcmp(ft_itoa(ft_atoi(first_line)),
@@ -118,8 +118,8 @@ int			line_validator(char *line)
 		g_path = 1;
 	else if (!ft_strcmp(line, "##moves"))
 		g_moves = 1;
-    else if (line[0] == '#')
-        return (1);
+	else if (line[0] == '#')
+		return (1);
 	else
 	{
 		if (!valid_numeric_line(line) && !valid_route(line))

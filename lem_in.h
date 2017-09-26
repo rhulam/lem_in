@@ -6,7 +6,7 @@
 /*   By: rhulam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 16:12:02 by rhulam            #+#    #+#             */
-/*   Updated: 2017/09/21 17:31:42 by rhulam           ###   ########.fr       */
+/*   Updated: 2017/09/26 15:26:27 by rhulam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,12 @@ int					start_end_count_check_3(int *i);
 void				check_path(t_lem_in *routes);
 void				free_full_list(t_lem_in *list);
 int					check_ints(char *line, int i, int l);
-int                 get_ants(void);
-int                 valid(char *line);
+int					get_ants(void);
+int					valid(char *line);
+int					find_ants(char *line);
+int					valid2(char *line, int *ants);
+int					valid3(int *start, int *end);
+int					valid4(int *start, int *end);
+int					valid5(int *link, int *start, int *end);
 
 #endif

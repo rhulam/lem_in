@@ -144,6 +144,9 @@
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/help3.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhulam/lem_in/help4.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhulam/lem_in/help_fill_list.c">
 			<Option target="lem_in"/>
 		</Unit>
